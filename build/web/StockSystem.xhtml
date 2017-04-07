@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Online Brokerage Account</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </head>
+    <h:body style="background-image: url(marilyn-stock-market-ftr.jpg)">
+        <center>
+         
+        <h:form style="font-family: fantasy; font-size: larger; font-weight: bolder; font-stretch: extra-expanded">
+             <p><h1 style="background-image: url(marilyn-stock-market-ftr.jpg)">Welcome to your Online Brokerage Account</h1></p>
+        <h:graphicImage value ="de-binaire-optie-beurs.jpg"/>
+        <p><h2 style="background-image: url(marilyn-stock-market-ftr.jpg)">Please choose the operations to be performed</h2><br></br></p>
+            
+        <b style="font-family: sans-serif">Trade:</b>&#xA0;
+            <h:commandButton style="border-style: outset" action="Trade.xhtml" value="Place Order"></h:commandButton>&#xA0;
+            
+            
+            <b style="font-family: sans-serif; color: menutext" >Display orders:</b>&#xA0;
+            <h:commandButton style="border-style: outset" action="#{onlineAccount.displayOrders()}" value="Display Orders"></h:commandButton>
+            
+            &#xA0;
+            <p><h:commandButton style="border-style: outset" action="#{userAccount.backToLogin()}" value="Back to Login" /></p>
+             
+            <center><h:commandButton style="border-style: outset" action="#{userAccount.logout()}" value="Logout" /></center>
+        </h:form>
+        </center>    
+    </h:body>
+</html>

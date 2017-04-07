@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <head>
+        <title>Registration</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <meta http-equiv="pragma" content="no-cache" />
+        <meta http-equiv="refresh"/>
+    </head>
+     <h:body style="background-image: url(marilyn-stock-market-ftr.jpg)">
+        
+        <h:form style="font-family: fantasy; font-size: x-large; font-weight: bolder; font-stretch: extra-expanded">
+             <center>
+                 <h3>Create a new online brokerage account!</h3>
+                 
+                 <p>Please enter your Social Security Number:<br></br>
+                <h:inputText style="border-style: inset" id="ssn" required ="true" 
+                             requiredMessage="The SSN field cannot be empty"
+                        title="Please enter your Social Security Number"
+                        value="#{userAccount.ssn}"
+                        validatorMessage="Please use a correct format 
+                        for your social security number">
+                    <f:validateLength maximum="5" minimum="5" />
+                </h:inputText>
+            </p>
+            
+                 <p>Please enter your full name:<br></br>
+                <h:inputText style="border-style: inset" id="name" required ="true" 
+                             requiredMessage="The ID field cannot be empty"
+                        title="Please enter your name"
+                        value="#{userAccount.name}">
+                    <f:validateLength maximum="50" minimum="3" />
+                </h:inputText>
+             </p>
+            
+                 <p>Please enter your new online ID:<br></br>
+                <h:inputText style="border-style: inset" id="id" required ="true" 
+                             requiredMessage="The ID field cannot be empty"
+                        title="Please enter your ID"
+                        value="#{userAccount.loginId}"
+                        validatorMessage="The length of your selected 
+                        ID must be between 3 and 20.">
+                    <f:validateLength maximum="20" minimum="3" />
+                </h:inputText>
+            </p>
+            
+                 <p>Please enter your password:<br></br>
+                <h:inputText style="border-style: inset" id="password" required ="true" 
+                          requiredMessage="The password field cannot be empty"
+                        title="Please enter your password"
+                        value="#{userAccount.password}"
+                        validatorMessage="The length of your 
+                        password must be between 3 and 20.">
+                    <f:validateLength maximum="20" minimum="3" />
+                </h:inputText>
+            </p>
+            
+                 <p><b style="background-image: url(marilyn-stock-market-ftr.jpg)">Please select one of the following questions:</b><br></br> 
+                <h:selectOneMenu style="border-style: inset" value="#{userAccount.question1}">
+                    <f:selectItems value="#{userAccount.questions}"/>
+                </h:selectOneMenu>
+            </p>
+            
+                 <p><b style="background-image: url(marilyn-stock-market-ftr.jpg)">Please enter your answer</b><br></br> 
+                 <h:inputText style="border-style: inset" id="answer1" required ="true" 
+                             requiredMessage="The answer field cannot be empty"
+                        title="Please enter your answer"
+                        value="#{userAccount.answer1}">
+                 </h:inputText>
+            </p>
+            
+                 <p><b style="background-image: url(marilyn-stock-market-ftr.jpg)">Please select one of the following questions:</b><br></br> 
+                 <h:selectOneMenu style="border-style: inset" value="#{userAccount.question2}">
+                    <f:selectItems value="#{userAccount.questions}"/>
+                </h:selectOneMenu>
+            </p>
+            
+                 <p>Please enter your answer<br></br> 
+                 <h:inputText style="border-style: inset" id="answer2" required ="true" 
+                             requiredMessage="The answer field cannot be empty"
+                        title="Please enter your answer"
+                        value="#{userAccount.answer2}">
+                 </h:inputText>
+            </p>
+            
+                 <p>Do you want to deposit money in your account?<br></br>
+                <h:inputText style="border-style: inset" id="deposit" required ="false" 
+                         title="Please enter the amount"
+                         value="#{userAccount.deposit}">
+                      
+                </h:inputText>
+            </p>
+            
+            <p>
+                <h:commandButton style="border-style: outset" id="submit" value="Register"
+                                 action="#{userAccount.signUp()}" />
+            </p>
+            
+            </center>
+        </h:form>
+         <center><a href="index.xhtml" style="border-style: hidden; background-color: threedface">Back</a></center>
+    </h:body>
+</html>
